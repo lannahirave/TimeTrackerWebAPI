@@ -17,4 +17,11 @@ public class EmployeeActivity
 
     public int EmployeeRoleId { get; set; }
     public EmployeeRole EmployeeRole { get; set; } = null!;
+
+    public string ReviewOfActivity()
+    {
+        string result = $"{Date}\n"
+            + $"{Employee.Name} worked on {Project.Name} for {(Project.EndDate - Project.StartDate).TotalHours:F1} hours of {ActivityType.Name}";
+        return result;
+    }
 }

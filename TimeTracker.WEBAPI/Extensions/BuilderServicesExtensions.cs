@@ -2,6 +2,7 @@
 using TimeTracker.BLL.MappingProfiles;
 using TimeTracker.BLL.Services;
 using TimeTracker.BLL.Services.Abstract;
+using TimeTracker.DAL.Models;
 using TimeTracker.DAL.Repositories;
 using TimeTracker.DAL.Repositories.Abstract;
 
@@ -13,6 +14,8 @@ public static class BuilderServicesExtensions
     {
         services.AddTransient<IProjectRepository, ProjectRepository>();
         services.AddTransient<ProjectBaseService, ProjectService>();
+        services.AddTransient<IEmployeeActivity, EmployeeActivityRepository>();
+        services.AddTransient<EmployeeActivityBaseService, EmployeeActivityService>();
     }
 
     public static void AddAutoMapper(this IServiceCollection services)
