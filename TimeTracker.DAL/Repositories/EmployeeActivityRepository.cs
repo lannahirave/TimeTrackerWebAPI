@@ -57,10 +57,6 @@ public class EmployeeActivityRepository : IEmployeeActivity
         var startOfTheWeek = startOfTheYearDate.AddDays((weekNumber-1) * 7).AddMilliseconds(1);
         
         var endOfTheWeek = startOfTheWeek.AddDays(7).AddMilliseconds(-1);
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine($"{startOfTheWeek} {endOfTheWeek} || {date}");
-        
-        Console.ForegroundColor = ConsoleColor.White;
         return date >= startOfTheWeek && date <= endOfTheWeek;
     }
 
