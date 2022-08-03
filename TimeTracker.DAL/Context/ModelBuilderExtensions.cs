@@ -6,9 +6,9 @@ namespace TimeTracker.DAL.Context;
 
 public static class ModelBuilderExtensions
 {
-    private static readonly int employeeCount = 10;
+    private static readonly int employeeCount = 5;
     private static readonly int projectCount = 5;
-    private static readonly int employeeActivityCount = 100;
+    private static readonly int employeeActivityCount = 800;
 
     public static void ConfigureContext(this ModelBuilder modelBuilder)
     {

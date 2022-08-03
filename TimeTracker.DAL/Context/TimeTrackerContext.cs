@@ -8,7 +8,7 @@ public class TimeTrackerContext : DbContext
     public TimeTrackerContext(DbContextOptions<TimeTrackerContext> options)
         : base(options)
     {
-        //Database.EnsureCreated();
+        Database.EnsureCreated();
     }
 
     public DbSet<Project> Projects { get; set; } = null!;
