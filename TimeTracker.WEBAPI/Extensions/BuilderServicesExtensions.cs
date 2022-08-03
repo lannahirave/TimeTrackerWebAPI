@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Serilog;
 using TimeTracker.BLL.MappingProfiles;
 using TimeTracker.BLL.Services;
 using TimeTracker.BLL.Services.Abstract;
@@ -22,5 +23,15 @@ public static class BuilderServicesExtensions
     {
         services.AddAutoMapper(cfg => { cfg.AddProfile<ProjectProfile>(); },
             Assembly.GetExecutingAssembly());
+    }
+    
+    public static void AddLogger(this WebApplicationBuilder builder)
+    {
+        var logger = new LoggerConfiguration()
+            .ReadFrom.Configuration(builder.Configuration)
+            .Enrich.FromLogContext()
+            .CreateLogger();
+        builder.Logging.ClearProviders();
+        builder.Logging.AddSerilog(logger);
     }
 }

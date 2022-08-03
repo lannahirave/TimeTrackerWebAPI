@@ -12,6 +12,8 @@ builder.Services.AddDbContext<TimeTrackerContext>(option =>
 //Custom services
 builder.Services.AddAutoMapper();
 builder.Services.RegisterCustomServices();
+builder.AddLogger();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
