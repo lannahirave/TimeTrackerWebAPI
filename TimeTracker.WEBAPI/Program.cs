@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TimeTracker.DAL.Context;
+using TimeTracker.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<TimeTrackerContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("TimeTrackerDB")));
-
+//Custom services
+builder.Services.AddAutoMapper();
+builder.Services.RegisterCustomServices();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

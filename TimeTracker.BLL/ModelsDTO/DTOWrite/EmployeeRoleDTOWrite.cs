@@ -3,5 +3,5 @@
 public class EmployeeRoleDtoWrite
 {
     //eg. Software Engineer, Business Analyst
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
 }
