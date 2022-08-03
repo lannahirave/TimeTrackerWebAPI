@@ -21,7 +21,7 @@ public class EmployeeActivity
     public string ReviewOfActivity()
     {
         string result = $"{Date}\n"
-            + $"{Employee.Name} worked on {Project.Name} for {(Project.EndDate - Project.StartDate).TotalHours:F1} hours of {ActivityType.Name}";
+            + $"{Employee.Name} worked on {Project.Name} as {EmployeeRole.Name} for {(Project.EndDate - Project.StartDate).TotalHours:F1} hours of {ActivityType.Name}";
         return result;
     }
 }
