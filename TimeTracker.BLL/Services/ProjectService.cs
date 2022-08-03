@@ -37,7 +37,7 @@ public class ProjectService : ProjectBaseService
     public override async Task<ProjectDtoRead> UpdateProjectAsync(ProjectDtoRead projectDtoRead)
     {
         var project = Mapper.Map<Project>(projectDtoRead);
-        var updatedProject = await Context.CreateAsync(project);
+        var updatedProject = await Context.UpdateAsync(project);
         return Mapper.Map<ProjectDtoRead>(updatedProject);
     }
 
