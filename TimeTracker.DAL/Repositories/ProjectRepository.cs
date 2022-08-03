@@ -43,10 +43,7 @@ public class ProjectRepository : IProjectRepository
     public async Task<Project> UpdateAsync(Project item)
     {
         var project = await GetByIdAsync(item.Id);
-        if (project is null)
-        {
-            throw new Exception($"No object with id {item.Id} found");
-        }
+        if (project is null) throw new Exception($"No object with id {item.Id} found");
 
         project.Name = item.Name;
         project.StartDate = item.StartDate;
@@ -60,16 +57,14 @@ public class ProjectRepository : IProjectRepository
             Console.WriteLine(e);
             throw;
         }
+
         return project;
     }
 
     public async Task DeleteAsync(int id)
     {
         var project = await GetByIdAsync(id);
-        if (project is null)
-        {
-            throw new Exception($"No object with id {id} found");
-        }
+        if (project is null) throw new Exception($"No object with id {id} found");
 
         try
         {

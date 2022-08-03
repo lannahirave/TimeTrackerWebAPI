@@ -3,7 +3,7 @@ using TimeTracker.DAL.Repositories.Abstract;
 
 namespace TimeTracker.BLL.Services.Abstract;
 
-public abstract class BaseService<T> where T: class
+public abstract class BaseService<T> where T : class
 {
     protected readonly IRepository<T> Context;
     protected readonly IMapper Mapper;

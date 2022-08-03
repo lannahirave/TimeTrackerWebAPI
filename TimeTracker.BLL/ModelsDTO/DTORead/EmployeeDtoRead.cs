@@ -6,5 +6,4 @@ public class EmployeeDtoRead
     public string Name { get; set; } = null!;
     public string Gender { get; set; } = null!;
     public DateTime Birthday { get; set; }
-    
 }

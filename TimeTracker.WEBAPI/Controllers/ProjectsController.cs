@@ -3,91 +3,91 @@ using TimeTracker.BLL.ModelsDTO.DTORead;
 using TimeTracker.BLL.ModelsDTO.DTOWrite;
 using TimeTracker.BLL.Services.Abstract;
 
-namespace TimeTracker.Controllers
+namespace TimeTracker.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class ProjectsController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProjectsController : ControllerBase
+    private readonly ProjectBaseService _projectBaseService;
+
+    public ProjectsController(ProjectBaseService projectBaseService)
     {
-        private readonly ProjectBaseService _projectBaseService;
+        _projectBaseService = projectBaseService;
+    }
 
-        public ProjectsController(ProjectBaseService projectBaseService)
+    // GET: api/Projects
+    [HttpGet]
+    public async Task<IActionResult> GetProjects()
+    {
+        try
         {
-            _projectBaseService = projectBaseService;
+            var projects = await _projectBaseService.GetProjectsAsync();
+            return Ok(projects);
         }
-        // GET: api/Projects
-        [HttpGet]
-        public async Task<IActionResult> GetProjects()
+        catch (Exception ex)
         {
-            try
-            {
-                var projects = await _projectBaseService.GetProjectsAsync();
-                return Ok(projects);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return BadRequest(ex.Message);
         }
+    }
 
-        // GET: api/Projects/5
-        [HttpGet("{id}", Name = "Get")]
-        public async Task<IActionResult>GetProjectById(int id)
+    // GET: api/Projects/5
+    [HttpGet("{id}", Name = "Get")]
+    public async Task<IActionResult> GetProjectById(int id)
+    {
+        try
         {
-            try
-            {
-                var project = await _projectBaseService.GetProjectByIdAsync(id);
-                return Ok(project);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var project = await _projectBaseService.GetProjectByIdAsync(id);
+            return Ok(project);
         }
-
-        // POST: api/Projects
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] ProjectDtoWrite projectDtoWrite)
+        catch (Exception ex)
         {
-            try
-            {
-                var project = await _projectBaseService.CreateProjectAsync(projectDtoWrite);
-                return Ok(project);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return BadRequest(ex.Message);
         }
+    }
 
-        // PUT: api/Projects/5
-        [HttpPut]
-        public async Task<IActionResult> Put([FromBody] ProjectDtoRead projectDtoRead)
+    // POST: api/Projects
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] ProjectDtoWrite projectDtoWrite)
+    {
+        try
         {
-            try
-            {
-                var project = await _projectBaseService.UpdateProjectAsync(projectDtoRead);
-                return Ok(project);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var project = await _projectBaseService.CreateProjectAsync(projectDtoWrite);
+            return Ok(project);
         }
-
-        // DELETE: api/Projects/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        catch (Exception ex)
         {
-            try
-            {
-                await _projectBaseService.DeleteProjectAsync(id);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return BadRequest(ex.Message);
+        }
+    }
+
+    // PUT: api/Projects/5
+    [HttpPut]
+    public async Task<IActionResult> Put([FromBody] ProjectDtoRead projectDtoRead)
+    {
+        try
+        {
+            var project = await _projectBaseService.UpdateProjectAsync(projectDtoRead);
+            return Ok(project);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    // DELETE: api/Projects/5
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        try
+        {
+            await _projectBaseService.DeleteProjectAsync(id);
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
         }
     }
 }

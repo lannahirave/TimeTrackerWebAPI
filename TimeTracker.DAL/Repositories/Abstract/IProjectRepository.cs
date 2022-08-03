@@ -2,7 +2,6 @@
 
 namespace TimeTracker.DAL.Repositories.Abstract;
 
-public interface IProjectRepository: IRepository<Project>
+public interface IProjectRepository : IRepository<Project>
 {
-    
 }

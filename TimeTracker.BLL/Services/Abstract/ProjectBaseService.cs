@@ -6,12 +6,12 @@ using TimeTracker.DAL.Repositories.Abstract;
 
 namespace TimeTracker.BLL.Services.Abstract;
 
-public abstract class ProjectBaseService: BaseService<Project>
+public abstract class ProjectBaseService : BaseService<Project>
 {
     protected ProjectBaseService(IRepository<Project> context, IMapper mapper) : base(context, mapper)
     {
     }
-    
+
     public abstract Task<ICollection<ProjectDtoRead>> GetProjectsAsync();
 
     public abstract Task<ProjectDtoRead> GetProjectByIdAsync(int id);

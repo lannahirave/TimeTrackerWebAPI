@@ -14,13 +14,10 @@ public static class BuilderServicesExtensions
         services.AddTransient<IProjectRepository, ProjectRepository>();
         services.AddTransient<ProjectBaseService, ProjectService>();
     }
-    
+
     public static void AddAutoMapper(this IServiceCollection services)
     {
-        services.AddAutoMapper(cfg =>
-            {
-                cfg.AddProfile<ProjectProfile>();
-            },
+        services.AddAutoMapper(cfg => { cfg.AddProfile<ProjectProfile>(); },
             Assembly.GetExecutingAssembly());
     }
 }
