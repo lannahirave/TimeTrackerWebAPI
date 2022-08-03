@@ -1,6 +1,4 @@
-﻿using TimeTracker.DAL.Models;
-
-namespace TimeTracker.BLL.ModelsDTO.DTORead;
+﻿namespace TimeTracker.BLL.ModelsDTO.DTORead;
 
 public class EmployeeActivityDtoRead
 {

@@ -1,6 +1,4 @@
-﻿using TimeTracker.DAL.Models;
-
-namespace TimeTracker.BLL.ModelsDTO.DTOWrite;
+﻿namespace TimeTracker.BLL.ModelsDTO.DTOWrite;
 
 public class EmployeeActivityDtoWrite
 {
