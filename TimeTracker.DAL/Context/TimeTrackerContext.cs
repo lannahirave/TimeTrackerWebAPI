@@ -11,11 +11,11 @@ public class TimeTrackerContext : DbContext
         //Database.EnsureCreated();
     }
 
-    public DbSet<Project> Projects { get; set; }
-    public DbSet<Employee> Employees { get; set; }
-    public DbSet<EmployeeActivity> Activities { get; set; }
-    public DbSet<ActivityType> ActivityTypes { get; set; }
-    public DbSet<EmployeeRole> EmployeeRoles { get; set; }
+    public DbSet<Project> Projects { get; set; } = null!;
+    public DbSet<Employee> Employees { get; set; } = null!;
+    public DbSet<EmployeeActivity> Activities { get; set; } = null!;
+    public DbSet<ActivityType> ActivityTypes { get; set; } = null!;
+    public DbSet<EmployeeRole> EmployeeRoles { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

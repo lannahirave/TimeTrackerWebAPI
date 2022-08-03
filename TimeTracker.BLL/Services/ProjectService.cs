@@ -23,7 +23,7 @@ public class ProjectService : ProjectBaseService
     public override async Task<ProjectDtoRead> GetProjectByIdAsync(int id)
     {
         var project = await Context.GetByIdAsync(id)
-                      ?? throw new Exception($"Project with id {id}not found");
+                      ?? throw new Exception($"Project with id {id} not found");
         return Mapper.Map<ProjectDtoRead>(project);
     }
 
