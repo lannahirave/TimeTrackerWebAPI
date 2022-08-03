@@ -40,6 +40,38 @@ namespace TimeTracker.DAL.Migrations
                         .IsUnique();
 
                     b.ToTable("ActivityTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Regular work"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Overtime"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Additional work"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Voluntary"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Training"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Other"
+                        });
                 });
 
             modelBuilder.Entity("TimeTracker.DAL.Models.Employee", b =>
@@ -65,6 +97,78 @@ namespace TimeTracker.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Birthday = new DateTime(1970, 7, 10, 1, 53, 42, 110, DateTimeKind.Unspecified).AddTicks(4765),
+                            Gender = "Female",
+                            Name = "Judson Gerlach"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Birthday = new DateTime(2016, 4, 30, 8, 25, 36, 946, DateTimeKind.Unspecified).AddTicks(1810),
+                            Gender = "Female",
+                            Name = "Sonya Moen"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Birthday = new DateTime(2015, 1, 8, 20, 19, 20, 986, DateTimeKind.Unspecified).AddTicks(3706),
+                            Gender = "Female",
+                            Name = "Theo Veum"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Birthday = new DateTime(1961, 6, 14, 6, 31, 11, 402, DateTimeKind.Unspecified).AddTicks(251),
+                            Gender = "Non binary",
+                            Name = "Guadalupe Weimann"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Birthday = new DateTime(2004, 12, 14, 14, 2, 57, 162, DateTimeKind.Unspecified).AddTicks(820),
+                            Gender = "Female",
+                            Name = "Maudie Schiller"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Birthday = new DateTime(1960, 12, 4, 23, 16, 45, 45, DateTimeKind.Unspecified).AddTicks(7843),
+                            Gender = "Non binary",
+                            Name = "Lawson Murray"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Birthday = new DateTime(2016, 1, 1, 23, 57, 12, 368, DateTimeKind.Unspecified).AddTicks(8364),
+                            Gender = "Non binary",
+                            Name = "Laney Skiles"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Birthday = new DateTime(2010, 7, 31, 14, 33, 34, 953, DateTimeKind.Unspecified).AddTicks(8760),
+                            Gender = "Female",
+                            Name = "Madonna Stehr"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Birthday = new DateTime(2008, 12, 30, 19, 8, 54, 265, DateTimeKind.Unspecified).AddTicks(1366),
+                            Gender = "Female",
+                            Name = "Mervin Glover"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Birthday = new DateTime(2019, 11, 23, 12, 40, 12, 539, DateTimeKind.Unspecified).AddTicks(7656),
+                            Gender = "Non binary",
+                            Name = "Hershel Schamberger"
+                        });
                 });
 
             modelBuilder.Entity("TimeTracker.DAL.Models.EmployeeActivity", b =>
@@ -101,6 +205,908 @@ namespace TimeTracker.DAL.Migrations
                     b.HasIndex("ProjectId");
 
                     b.ToTable("Activities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 5, 9, 11, 31, 36, 721, DateTimeKind.Local).AddTicks(2579),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 1,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2022, 5, 8, 8, 38, 11, 5, DateTimeKind.Local).AddTicks(6082),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 1,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ActivityTypeId = 5,
+                            Date = new DateTime(2021, 11, 16, 18, 31, 5, 81, DateTimeKind.Local).AddTicks(5346),
+                            EmployeeId = 7,
+                            EmployeeRoleId = 4,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 5, 25, 14, 45, 11, 121, DateTimeKind.Local).AddTicks(2874),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 3,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 5, 30, 16, 31, 42, 425, DateTimeKind.Local).AddTicks(2110),
+                            EmployeeId = 4,
+                            EmployeeRoleId = 3,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2021, 8, 31, 16, 40, 21, 477, DateTimeKind.Local).AddTicks(3333),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 2,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2021, 12, 28, 11, 12, 50, 59, DateTimeKind.Local).AddTicks(44),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 3,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 5, 4, 7, 50, 29, 465, DateTimeKind.Local).AddTicks(7217),
+                            EmployeeId = 2,
+                            EmployeeRoleId = 2,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 5, 24, 11, 33, 1, 459, DateTimeKind.Local).AddTicks(7412),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 2,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 5, 1, 8, 34, 34, 763, DateTimeKind.Local).AddTicks(8254),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 1,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 3, 13, 5, 7, 36, 366, DateTimeKind.Local).AddTicks(1578),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 3,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 7, 5, 9, 45, 2, 968, DateTimeKind.Local).AddTicks(4416),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 4,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2021, 8, 22, 16, 13, 49, 960, DateTimeKind.Local).AddTicks(3257),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 2,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 4, 26, 14, 27, 7, 254, DateTimeKind.Local).AddTicks(7012),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 4,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2021, 10, 17, 21, 28, 47, 743, DateTimeKind.Local).AddTicks(3313),
+                            EmployeeId = 6,
+                            EmployeeRoleId = 4,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 1, 28, 10, 13, 46, 595, DateTimeKind.Local).AddTicks(1152),
+                            EmployeeId = 4,
+                            EmployeeRoleId = 3,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2022, 5, 15, 8, 28, 3, 130, DateTimeKind.Local).AddTicks(2456),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 1,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 18,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 3, 22, 10, 50, 37, 103, DateTimeKind.Local).AddTicks(8151),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 1,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 19,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2021, 12, 22, 22, 3, 49, 643, DateTimeKind.Local).AddTicks(6028),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 1,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 20,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2021, 8, 3, 17, 40, 52, 905, DateTimeKind.Local).AddTicks(6708),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 2,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 21,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 1, 27, 5, 31, 2, 310, DateTimeKind.Local).AddTicks(8489),
+                            EmployeeId = 7,
+                            EmployeeRoleId = 4,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 22,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 7, 5, 8, 54, 37, 76, DateTimeKind.Local).AddTicks(1726),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 1,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 23,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2021, 11, 19, 8, 35, 59, 828, DateTimeKind.Local).AddTicks(9548),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 1,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 24,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2022, 5, 14, 14, 41, 25, 202, DateTimeKind.Local).AddTicks(7160),
+                            EmployeeId = 6,
+                            EmployeeRoleId = 2,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 25,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2021, 12, 26, 13, 18, 39, 28, DateTimeKind.Local).AddTicks(666),
+                            EmployeeId = 2,
+                            EmployeeRoleId = 1,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 26,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 1, 28, 2, 20, 50, 523, DateTimeKind.Local).AddTicks(6173),
+                            EmployeeId = 2,
+                            EmployeeRoleId = 2,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 27,
+                            ActivityTypeId = 5,
+                            Date = new DateTime(2021, 9, 28, 23, 34, 56, 53, DateTimeKind.Local).AddTicks(8642),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 4,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 28,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2022, 5, 11, 8, 55, 9, 927, DateTimeKind.Local).AddTicks(1930),
+                            EmployeeId = 2,
+                            EmployeeRoleId = 4,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 29,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2021, 11, 17, 10, 8, 28, 459, DateTimeKind.Local).AddTicks(83),
+                            EmployeeId = 10,
+                            EmployeeRoleId = 4,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 30,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 7, 18, 0, 55, 38, 722, DateTimeKind.Local).AddTicks(8004),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 1,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 31,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2021, 9, 7, 21, 13, 54, 839, DateTimeKind.Local).AddTicks(7584),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 1,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 32,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 2, 12, 8, 57, 25, 154, DateTimeKind.Local).AddTicks(8620),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 2,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 33,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2021, 10, 14, 9, 45, 59, 744, DateTimeKind.Local).AddTicks(3633),
+                            EmployeeId = 2,
+                            EmployeeRoleId = 1,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 34,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2022, 5, 30, 7, 59, 52, 90, DateTimeKind.Local).AddTicks(3765),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 2,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 35,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 4, 20, 20, 19, 56, 385, DateTimeKind.Local).AddTicks(1898),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 4,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 36,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 1, 19, 16, 22, 31, 59, DateTimeKind.Local).AddTicks(7974),
+                            EmployeeId = 3,
+                            EmployeeRoleId = 4,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 37,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2021, 10, 12, 23, 24, 16, 707, DateTimeKind.Local).AddTicks(973),
+                            EmployeeId = 7,
+                            EmployeeRoleId = 1,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 38,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2022, 7, 17, 19, 18, 53, 203, DateTimeKind.Local).AddTicks(8694),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 4,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 39,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2021, 9, 2, 0, 15, 13, 0, DateTimeKind.Local).AddTicks(1428),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 2,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 40,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 1, 28, 22, 11, 12, 808, DateTimeKind.Local).AddTicks(5185),
+                            EmployeeId = 10,
+                            EmployeeRoleId = 3,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 41,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 3, 23, 6, 23, 43, 534, DateTimeKind.Local).AddTicks(9781),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 3,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 42,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 3, 18, 2, 55, 34, 858, DateTimeKind.Local).AddTicks(355),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 2,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 43,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 1, 23, 2, 12, 40, 582, DateTimeKind.Local).AddTicks(8080),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 2,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 44,
+                            ActivityTypeId = 5,
+                            Date = new DateTime(2022, 1, 12, 18, 34, 13, 21, DateTimeKind.Local).AddTicks(7445),
+                            EmployeeId = 3,
+                            EmployeeRoleId = 2,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 45,
+                            ActivityTypeId = 5,
+                            Date = new DateTime(2021, 11, 7, 5, 19, 10, 640, DateTimeKind.Local).AddTicks(8165),
+                            EmployeeId = 7,
+                            EmployeeRoleId = 2,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 46,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2021, 12, 1, 22, 19, 4, 860, DateTimeKind.Local).AddTicks(7803),
+                            EmployeeId = 3,
+                            EmployeeRoleId = 4,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 47,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2022, 1, 17, 2, 53, 37, 987, DateTimeKind.Local).AddTicks(7489),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 1,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 48,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 4, 20, 21, 15, 39, 443, DateTimeKind.Local).AddTicks(9154),
+                            EmployeeId = 6,
+                            EmployeeRoleId = 4,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 49,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 7, 4, 16, 37, 45, 844, DateTimeKind.Local).AddTicks(8672),
+                            EmployeeId = 6,
+                            EmployeeRoleId = 4,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 50,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 4, 23, 20, 35, 10, 605, DateTimeKind.Local).AddTicks(7563),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 4,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 51,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2022, 5, 26, 10, 1, 15, 132, DateTimeKind.Local).AddTicks(2249),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 4,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 52,
+                            ActivityTypeId = 5,
+                            Date = new DateTime(2022, 6, 1, 20, 27, 1, 421, DateTimeKind.Local).AddTicks(7994),
+                            EmployeeId = 2,
+                            EmployeeRoleId = 4,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 53,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 6, 24, 19, 22, 7, 501, DateTimeKind.Local).AddTicks(1208),
+                            EmployeeId = 7,
+                            EmployeeRoleId = 2,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 54,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 5, 29, 4, 34, 31, 939, DateTimeKind.Local).AddTicks(6601),
+                            EmployeeId = 2,
+                            EmployeeRoleId = 3,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 55,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2021, 10, 14, 0, 38, 40, 418, DateTimeKind.Local).AddTicks(2200),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 4,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 56,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 6, 1, 14, 57, 14, 770, DateTimeKind.Local).AddTicks(2981),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 4,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 57,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 5, 10, 11, 50, 34, 781, DateTimeKind.Local).AddTicks(1505),
+                            EmployeeId = 4,
+                            EmployeeRoleId = 2,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 58,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2021, 10, 20, 8, 2, 18, 441, DateTimeKind.Local).AddTicks(375),
+                            EmployeeId = 10,
+                            EmployeeRoleId = 1,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 59,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2021, 9, 6, 1, 17, 51, 537, DateTimeKind.Local).AddTicks(4325),
+                            EmployeeId = 10,
+                            EmployeeRoleId = 1,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 60,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2021, 8, 23, 2, 57, 9, 99, DateTimeKind.Local).AddTicks(6063),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 1,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 61,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2021, 9, 1, 15, 7, 25, 506, DateTimeKind.Local).AddTicks(3364),
+                            EmployeeId = 4,
+                            EmployeeRoleId = 3,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 62,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2022, 6, 15, 8, 29, 31, 810, DateTimeKind.Local).AddTicks(8341),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 3,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 63,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2022, 6, 17, 16, 24, 54, 375, DateTimeKind.Local).AddTicks(5057),
+                            EmployeeId = 10,
+                            EmployeeRoleId = 1,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 64,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 6, 8, 20, 19, 26, 21, DateTimeKind.Local).AddTicks(495),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 4,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 65,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2021, 9, 17, 17, 41, 47, 747, DateTimeKind.Local).AddTicks(99),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 1,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 66,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2021, 12, 20, 3, 50, 42, 693, DateTimeKind.Local).AddTicks(8667),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 3,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 67,
+                            ActivityTypeId = 5,
+                            Date = new DateTime(2021, 11, 16, 23, 52, 49, 933, DateTimeKind.Local).AddTicks(3247),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 1,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 68,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2022, 7, 18, 5, 5, 29, 528, DateTimeKind.Local).AddTicks(7259),
+                            EmployeeId = 5,
+                            EmployeeRoleId = 2,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 69,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2021, 10, 10, 1, 17, 20, 899, DateTimeKind.Local).AddTicks(5877),
+                            EmployeeId = 4,
+                            EmployeeRoleId = 3,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 70,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2021, 10, 30, 8, 48, 56, 396, DateTimeKind.Local).AddTicks(3518),
+                            EmployeeId = 4,
+                            EmployeeRoleId = 1,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 71,
+                            ActivityTypeId = 5,
+                            Date = new DateTime(2022, 7, 23, 8, 44, 46, 913, DateTimeKind.Local).AddTicks(1328),
+                            EmployeeId = 7,
+                            EmployeeRoleId = 3,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 72,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 4, 30, 13, 49, 0, 616, DateTimeKind.Local).AddTicks(2229),
+                            EmployeeId = 10,
+                            EmployeeRoleId = 2,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 73,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 1, 16, 15, 23, 29, 610, DateTimeKind.Local).AddTicks(1179),
+                            EmployeeId = 10,
+                            EmployeeRoleId = 2,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 74,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2021, 11, 15, 22, 25, 34, 101, DateTimeKind.Local).AddTicks(8410),
+                            EmployeeId = 10,
+                            EmployeeRoleId = 1,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 75,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2021, 10, 9, 21, 49, 29, 591, DateTimeKind.Local).AddTicks(529),
+                            EmployeeId = 3,
+                            EmployeeRoleId = 3,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 76,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 2, 11, 5, 58, 39, 28, DateTimeKind.Local).AddTicks(3302),
+                            EmployeeId = 10,
+                            EmployeeRoleId = 3,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 77,
+                            ActivityTypeId = 5,
+                            Date = new DateTime(2022, 5, 8, 9, 3, 31, 18, DateTimeKind.Local).AddTicks(2139),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 4,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 78,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2022, 3, 15, 1, 52, 14, 72, DateTimeKind.Local).AddTicks(7294),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 1,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 79,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2022, 1, 15, 9, 22, 37, 600, DateTimeKind.Local).AddTicks(2047),
+                            EmployeeId = 7,
+                            EmployeeRoleId = 1,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 80,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 3, 1, 10, 23, 6, 386, DateTimeKind.Local).AddTicks(1579),
+                            EmployeeId = 7,
+                            EmployeeRoleId = 3,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 81,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2021, 10, 5, 19, 38, 35, 864, DateTimeKind.Local).AddTicks(4396),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 4,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 82,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 4, 23, 2, 21, 5, 500, DateTimeKind.Local).AddTicks(8508),
+                            EmployeeId = 10,
+                            EmployeeRoleId = 3,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 83,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2022, 2, 13, 9, 33, 40, 449, DateTimeKind.Local).AddTicks(4454),
+                            EmployeeId = 2,
+                            EmployeeRoleId = 4,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 84,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2021, 12, 19, 6, 54, 5, 326, DateTimeKind.Local).AddTicks(3300),
+                            EmployeeId = 7,
+                            EmployeeRoleId = 3,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 85,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2021, 11, 11, 20, 28, 13, 607, DateTimeKind.Local).AddTicks(2816),
+                            EmployeeId = 4,
+                            EmployeeRoleId = 3,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 86,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2022, 6, 11, 17, 33, 2, 949, DateTimeKind.Local).AddTicks(3502),
+                            EmployeeId = 3,
+                            EmployeeRoleId = 4,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 87,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2021, 10, 19, 18, 33, 10, 604, DateTimeKind.Local).AddTicks(234),
+                            EmployeeId = 4,
+                            EmployeeRoleId = 3,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 88,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 6, 19, 6, 13, 50, 511, DateTimeKind.Local).AddTicks(8970),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 3,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 89,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2021, 10, 12, 1, 3, 46, 279, DateTimeKind.Local).AddTicks(407),
+                            EmployeeId = 2,
+                            EmployeeRoleId = 2,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 90,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2021, 12, 14, 10, 34, 44, 567, DateTimeKind.Local).AddTicks(8761),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 3,
+                            ProjectId = 2
+                        },
+                        new
+                        {
+                            Id = 91,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 3, 5, 12, 53, 50, 422, DateTimeKind.Local).AddTicks(4764),
+                            EmployeeId = 8,
+                            EmployeeRoleId = 2,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 92,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2021, 8, 13, 21, 42, 33, 695, DateTimeKind.Local).AddTicks(1791),
+                            EmployeeId = 1,
+                            EmployeeRoleId = 3,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 93,
+                            ActivityTypeId = 1,
+                            Date = new DateTime(2021, 10, 25, 4, 33, 8, 756, DateTimeKind.Local).AddTicks(4748),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 2,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 94,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 1, 7, 1, 53, 50, 480, DateTimeKind.Local).AddTicks(7736),
+                            EmployeeId = 6,
+                            EmployeeRoleId = 4,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 95,
+                            ActivityTypeId = 6,
+                            Date = new DateTime(2022, 4, 20, 5, 7, 11, 201, DateTimeKind.Local).AddTicks(7381),
+                            EmployeeId = 3,
+                            EmployeeRoleId = 1,
+                            ProjectId = 4
+                        },
+                        new
+                        {
+                            Id = 96,
+                            ActivityTypeId = 3,
+                            Date = new DateTime(2022, 4, 24, 9, 8, 8, 333, DateTimeKind.Local).AddTicks(4896),
+                            EmployeeId = 7,
+                            EmployeeRoleId = 4,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 97,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 7, 16, 12, 7, 46, 707, DateTimeKind.Local).AddTicks(5405),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 2,
+                            ProjectId = 1
+                        },
+                        new
+                        {
+                            Id = 98,
+                            ActivityTypeId = 2,
+                            Date = new DateTime(2021, 12, 4, 21, 55, 13, 419, DateTimeKind.Local).AddTicks(2864),
+                            EmployeeId = 3,
+                            EmployeeRoleId = 4,
+                            ProjectId = 3
+                        },
+                        new
+                        {
+                            Id = 99,
+                            ActivityTypeId = 4,
+                            Date = new DateTime(2022, 6, 15, 2, 52, 7, 414, DateTimeKind.Local).AddTicks(7596),
+                            EmployeeId = 9,
+                            EmployeeRoleId = 2,
+                            ProjectId = 5
+                        },
+                        new
+                        {
+                            Id = 100,
+                            ActivityTypeId = 5,
+                            Date = new DateTime(2022, 1, 13, 1, 4, 19, 7, DateTimeKind.Local).AddTicks(8321),
+                            EmployeeId = 4,
+                            EmployeeRoleId = 4,
+                            ProjectId = 4
+                        });
                 });
 
             modelBuilder.Entity("TimeTracker.DAL.Models.EmployeeRole", b =>
@@ -121,6 +1127,28 @@ namespace TimeTracker.DAL.Migrations
                         .IsUnique();
 
                     b.ToTable("EmployeeRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Developer"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "QA"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Business Analyst"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Software Engineer"
+                        });
                 });
 
             modelBuilder.Entity("TimeTracker.DAL.Models.Project", b =>
@@ -145,6 +1173,43 @@ namespace TimeTracker.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Projects");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            EndDate = new DateTime(2016, 7, 9, 2, 47, 44, 951, DateTimeKind.Unspecified).AddTicks(985),
+                            Name = "deleniti",
+                            StartDate = new DateTime(2000, 11, 4, 9, 55, 39, 958, DateTimeKind.Unspecified).AddTicks(3801)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            EndDate = new DateTime(2002, 6, 7, 7, 6, 29, 80, DateTimeKind.Unspecified).AddTicks(9784),
+                            Name = "neque",
+                            StartDate = new DateTime(2000, 8, 22, 0, 31, 30, 426, DateTimeKind.Unspecified).AddTicks(8904)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            EndDate = new DateTime(2007, 10, 7, 1, 28, 9, 64, DateTimeKind.Unspecified).AddTicks(2158),
+                            Name = "sed",
+                            StartDate = new DateTime(2005, 3, 8, 14, 2, 56, 828, DateTimeKind.Unspecified).AddTicks(1776)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            EndDate = new DateTime(2020, 12, 5, 18, 19, 38, 580, DateTimeKind.Unspecified).AddTicks(4820),
+                            Name = "dolor",
+                            StartDate = new DateTime(2013, 8, 28, 17, 45, 58, 125, DateTimeKind.Unspecified).AddTicks(5038)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            EndDate = new DateTime(2018, 6, 22, 15, 27, 8, 263, DateTimeKind.Unspecified).AddTicks(3811),
+                            Name = "et",
+                            StartDate = new DateTime(2015, 11, 13, 6, 21, 48, 909, DateTimeKind.Unspecified).AddTicks(1156)
+                        });
                 });
 
             modelBuilder.Entity("TimeTracker.DAL.Models.EmployeeActivity", b =>
